@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <BlogFeed/>
 </template>
 
 <script lang="ts">

@@ -2,14 +2,14 @@
   <el-container>
     <el-header class="header">
       <h1 class="heading">Blog</h1>
-      <el-menu class="menu" :default-active="$route.path" mode="horizontal" router=true>
+      <el-menu class="menu" default-active="/" mode="horizontal" :router=true>
         <el-menu-item route="/" index="/">All</el-menu-item>
       </el-menu>
     </el-header>
   </el-container>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'headerMenu',
 }
@@ -20,6 +20,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 10px;
   margin-bottom: 50px;
 }
