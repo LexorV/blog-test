@@ -9,7 +9,7 @@
   </el-container>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'headerMenu',
 }

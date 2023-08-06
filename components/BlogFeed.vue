@@ -1,14 +1,12 @@
 <template>
   <main class="main">
-    <div class="list-blog" v-loading="$store.state.loading">
+    <div class="list-blog " >
       <ArticleCard v-for="article in $store.getters.paginationFilter(startPage, endPage)" :key="article.id" :article="article" />
     </div>
-    <el-pagination
+      <el-pagination
     layout="prev, pager, next"
     @size-change="handleSizeChange"
     @current-change="handleCurrentChange"
-    @prev-click="test1"
-    @next-click="test2"
     :total="this.$store.state.blog.length">
   </el-pagination>
   </main>
@@ -38,34 +36,11 @@ export default {
 
   },
   methods: {
-      handleSizeChange(val) {
-        console.log(`${val} items per page`);
-      },
       handleCurrentChange(val) {
-        console.log(val)
         this.startPage = (val - 1) * 10
         this.endPage = this.startPage + 10
       },
-      arrayPre (arrData) {
-      const commonPage = Math.cail(arrData.length / 8)
-      const newArr = []
-      let countPage = 1
-      for (let i = 0, b = 0, c = 3; i < commonPage; i++, b = c + 1, c += 4) {
-        newArr.push({ page: countPage, pre: b, next: c })
-        countPage++
-      }
-      return newArr
     },
-    test1(e) {
-      console.log(e)
-    },
-    test2(e) {
-      console.log(e)
-    }
-    },
-  mounted () {
-    console.log(this.allPagesNow)
-  }
 }
 </script>
 

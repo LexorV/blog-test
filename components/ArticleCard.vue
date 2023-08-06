@@ -6,12 +6,12 @@
     <p>Анонс: {{ article.preview }} </p>
     <p>Описание: {{ article.description }} </p>
     <img v-if="article.image" class="card-picture" :src="article.image" alt="photo" />
-    <el-button v-if="!isFull" class="button" @click="$event => openArticle(article.id)" size="large" type="primary">Открыть</el-button>
+    <el-button v-if="!isFull" class="button" @click="openArticle(article.id)" size="large" type="primary">Открыть</el-button>
   </div>
   </el-card>
 </template>
 
-<script>
+<script lang="ts" >
 import { generatorDate } from '~/helpers/helpers'
 export default {
   data() {
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     generatorDate,
-    openArticle (id) {
+    openArticle ( id:number) {
       this.$router.push(`/${id}`)
     },
   },
@@ -71,7 +71,7 @@ p {
   margin-top: 10px;
   image-rendering: crisp-edges;
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: contain;
   overflow: hidden;
 }

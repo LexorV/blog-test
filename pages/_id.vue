@@ -8,7 +8,7 @@
     />
   </div>
 </template>
-<script>
+<script >
 import ArticleCard from '~/components/ArticleCard.vue'
 export default {
   components: {
