@@ -4,6 +4,7 @@
       v-if="article"
       :key="article.id"
       :article="article"
+      :is-full="true"
     />
   </div>
 </template>

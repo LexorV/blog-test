@@ -1,11 +1,13 @@
 <template>
   <el-card class="card">
+    <div class="in-card">
     <h3>{{ article.title }}</h3>
     <p>Дата создания: {{ dateNew }} </p>
     <p>Анонс: {{ article.preview }} </p>
     <p>Описание: {{ article.description }} </p>
     <img v-if="article.image" class="card-picture" :src="article.image" alt="photo" />
-    <el-button @click="$event => openArticle(article.id)" size="large" type="primary">Открыть</el-button>
+    <el-button v-if="!isFull" class="button" @click="$event => openArticle(article.id)" size="large" type="primary">Открыть</el-button>
+  </div>
   </el-card>
 </template>
 
@@ -21,6 +23,10 @@ export default {
     article: {
       type: Object,
       default: () => ({})
+    },
+    isFull: {
+      type: Boolean,
+      default: false
     },
   },
   methods: {
@@ -46,12 +52,19 @@ p {
 
 .card {
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   height: 800px;
   width: 40%;
   box-sizing: border-box;
+}
+.in-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.button {
+  margin: auto;
 }
 
 .card-picture {

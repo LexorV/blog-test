@@ -10,6 +10,9 @@ export const getters = {
   getCurrentArticle: (state:any) => (id:any) => {
     return state.blog.find((article:any) => article.id === parseInt(id))
   },
+  paginationFilter: (state:any) => (start:number, end:number) => {
+    return state.blog.slice(start, end)
+  }
 
 }
 
