@@ -5,7 +5,6 @@
     </div>
       <el-pagination
     layout="prev, pager, next"
-    @size-change="handleSizeChange"
     @current-change="handleCurrentChange"
     :total="this.$store.state.blog.length">
   </el-pagination>
